@@ -13,7 +13,7 @@ class MarkovChain:
 	def load_vocab(self, name="vocab.json"):
 		try:
 			with open(name, "r") as f:
-				self.vocabo = json.load(f)
+				self.vocablo = json.load(f)
 		except Exception:
 			pass
 	def train(self, h):
