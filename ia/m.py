@@ -1,4 +1,5 @@
 import random
+import json
 
 class MarkovChain:
 	def __init__(self, corpus):
@@ -6,6 +7,15 @@ class MarkovChain:
 		self.vocablo = []
 		self.ret = ""
 		self.count = 0
+	def save_vocab(self, name="vocab.json"):
+		with open(name, "w") as f:
+			json.dump(self.vocablo, f)
+	def load_vocab(self, name="vocab.json"):
+		try:
+			with open(name, "r") as f:
+				self.vocabo = json.load(f)
+		except Exception:
+			pass
 	def train(self, h):
 		if h:
 			self.vocablo = []
